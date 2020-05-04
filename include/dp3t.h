@@ -10,3 +10,5 @@
 #define BROADCAST_KEY "broadcast key".encode("ascii")
 /* Length of a batch (2 hours) */
 #define SECONDS_PER_BATCH  2 * 60 * 60
+
+int version();

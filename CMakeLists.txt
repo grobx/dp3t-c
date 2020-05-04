@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
 file(STRINGS "VERSION" VERSION_STRING)
-project(D3PT VERSION "${VERSION_STRING}" LANGUAGES C)
+project(D3PT VERSION "${VERSION_STRING}" LANGUAGES C CXX)
 find_package(OpenSSL REQUIRED)
 ##################################################
 # Helper Macros
@@ -80,4 +80,4 @@ file(GLOB_RECURSE DP3T_SRC RELATIVE ${CMAKE_SOURCE_DIR} "src/*.c")
 
 add_library(dp3t STATIC ${DP3T_SRC})
 target_link_libraries(dp3t OpenSSL::Crypto)
-
+add_subdirectory(test)
